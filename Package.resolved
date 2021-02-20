@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DotEnv",
+        "repositoryURL": "https://github.com/swiftpackages/DotEnv.git",
+        "state": {
+          "branch": null,
+          "revision": "9da99f76b752153036a204b50045d6c56c0faeea",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "Rainbow",
+        "repositoryURL": "https://github.com/onevcat/Rainbow",
+        "state": {
+          "branch": null,
+          "revision": "626c3d4b6b55354b4af3aa309f998fae9b31a3d9",
+          "version": "3.2.0"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "43931b7a7daf8120a487601530c8bc03ce711992",
+          "version": "2.25.1"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "2b6054efa051565954e1d2b9da831680026cd768",
+          "version": "4.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
