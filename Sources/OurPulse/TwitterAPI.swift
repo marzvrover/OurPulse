@@ -14,19 +14,25 @@ struct TwitterAPI {
     static let api_url = "https://api.twitter.com/2/"
     static var authorization_type: TwitterAuthorizationType = TwitterAuthorizationType.BearerToken
     static var authorization_secrets: [String: String] = [:]
+    static var default_query_operators: [String] = []
 
     static func search(query: String,
                 max_results: Int = 10,
                 expansions: [String]? = nil,
                 tweetFields: [String]? = nil,
-                userFields: [String]? = nil) -> [Tweet]?
+                userFields: [String]? = nil,
+                ignoreDefaultQueryOperators: Bool = false) -> [Tweet]?
     {
         let search_url = TwitterAPI.api_url + "tweets/search/recent"
 
         var url_parts = URLComponents.init(string: search_url)!
 
         url_parts.queryItems = [
-            URLQueryItem(name: "query", value: query),
+            URLQueryItem(name: "query",
+                         value: default_query_operators.isEmpty || ignoreDefaultQueryOperators
+                            ? query
+                            : "\(query) \(default_query_operators.joined(separator: " "))"
+            ),
             URLQueryItem(name: "max_results", value: String(max_results)),
         ]
 

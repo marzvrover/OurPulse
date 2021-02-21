@@ -6,12 +6,13 @@ import Rainbow
 var env: () = try DotEnv.load(path: ".env")
 
 TwitterAPI.authorization_secrets["bearer_token"] = ProcessInfo.processInfo.environment["TWITTER_BEARER_TOKEN"]!
+TwitterAPI.default_query_operators.append("-is:retweet")
 
-var query = "#DragRace"
+var query = "thanos"
 
 print("Analyzing \(query)".green)
 
-var tweets = TwitterAPI.search(query: query)!
+var tweets = TwitterAPI.search(query: query, max_results: 30)!
 
 let score = analyzeTweets(tweets, verbose: true)
 
